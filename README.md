@@ -15,7 +15,7 @@ This Scaffold-ETH extension introduces tools to facilitate the integration of Lu
 1. Create a new project with Universal Profile extension:
 
 ```bash
-npx create-eth@latest -e @ValentineCodes/universal-profile-extension
+npx create-eth@latest -e ValentineCodes/universal-profile-extension
 ```
 
 2. Add `images` to `packages/nextjs/next.config.js`
