@@ -4,6 +4,8 @@
 
 This Scaffold-ETH extension introduces tools to facilitate the integration of Lukso's Universal Profiles.
 
+[Watch Video](https://youtu.be/ifinfGaAc8Y)
+
 ## Features
 - `useProfile` - A hook to query profile data
 - `UniversalProfile` - A card component to display user's profile data
