@@ -3,8 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import LoadingIndicator from "./LoadingIndicator";
 import SearchProfile from "./SearchProfile";
-import { InputGroup } from "./ui/input-group";
-import { Input } from "@chakra-ui/react";
 import { gql, request } from "graphql-request";
 import { CiSearch } from "react-icons/ci";
 import { useDebounceValue } from "usehooks-ts";
@@ -167,19 +165,17 @@ export function ProfileInput({ value, onSelectAddress, placeholder = "Enter prof
 
   return (
     <div className="w-full flex justify-center relative">
-      <InputGroup
-        endElement={<CiSearch className="text-2xl text-black" />}
-        className="border border-gray bg-base-200 rounded text-accent w-full mt-4"
-      >
-        <Input
+      <div className="relative w-full mt-4">
+        <input
           type="text"
           placeholder={placeholder}
-          className="input input-ghost focus-within:border-transparent focus:outline-none focus:bg-transparent h-[3rem] min-h-[2.2rem] px-4 border w-full font-medium placeholder:text-accent/70 text-base-content/70 focus:text-base-content/70"
+          className="input input-ghost focus-within:border-transparent focus:outline-none focus:bg-transparent h-[3rem] min-h-[2.2rem] px-4 border w-full font-medium placeholder:text-accent/70 text-base-content/70 focus:text-base-content/70 border-gray bg-base-200 rounded text-accent"
           value={query}
           onChange={handleInput}
           onKeyPress={handleKeyPress}
         />
-      </InputGroup>
+        <CiSearch className="absolute right-4 top-1/2 transform -translate-y-1/2 text-2xl text-black" />
+      </div>
 
       {showDropdown && (
         <div className="absolute top-[4.7rem] z-10 flex flex-col overflow-y-auto space-y-1 px-2 py-1 h-[3.5rem] w-full border border-gray bg-base-200 rounded text-accent shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]">
